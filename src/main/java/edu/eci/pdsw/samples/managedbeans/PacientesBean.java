@@ -31,8 +31,21 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "mb")
 @SessionScoped
 public class PacientesBean {
+    TipoIdentificacion tipoIdentificacion;
+    int id;
+    Paciente paciente;
 
-    TipoIdentificacion tipoIdentificacion = TipoIdentificacion.CC;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
 
     public void setTipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
         this.tipoIdentificacion = tipoIdentificacion;
@@ -51,6 +64,7 @@ public class PacientesBean {
         }
         
     }
+
 
     public TipoIdentificacion[] getTiposIdentificacion() {
         return TipoIdentificacion.values();

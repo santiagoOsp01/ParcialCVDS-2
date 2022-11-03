@@ -12,11 +12,11 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>        
-                
+    </properties>
+
     <dependencies>
-        
-        
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -85,7 +85,7 @@
             <artifactId>apache-log4j-extras</artifactId>
             <version>1.2.17</version>
         </dependency>
-        
+
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -97,14 +97,14 @@
 
 
     </dependencies>
-    
-    
-    
+
+
+
 
     <build>
         <plugins>
-            
-            
+
+
             <!-- clean project (also local H2 database)-->
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -119,7 +119,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <!-- create local H2 database -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -128,12 +128,12 @@
                 <dependencies>
                     <dependency>
                         <groupId>com.h2database</groupId>
-                        <artifactId>h2</artifactId> 
+                        <artifactId>h2</artifactId>
                         <version>1.4.184</version>
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <driver>org.h2.Driver</driver>                    
+                    <driver>org.h2.Driver</driver>
                     <url>jdbc:h2:file:./target/db/testdb;MODE=MYSQL</url>
                     <username>anonymous</username>
                     <password>anonymous</password>
@@ -148,16 +148,16 @@
                             <goal>execute</goal>
                         </goals>
                         <configuration>
-                            <srcFiles>                                
-                                <srcFile>tables.sql</srcFile>                                
+                            <srcFiles>
+                                <srcFile>tables.sql</srcFile>
                             </srcFiles>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
 
-            
-            
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -203,7 +203,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <!-- Tomcat embedded plugin. -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
@@ -215,7 +215,7 @@
                 </configuration>
             </plugin>
 
-            
+
         </plugins>
     </build>
     <repositories>

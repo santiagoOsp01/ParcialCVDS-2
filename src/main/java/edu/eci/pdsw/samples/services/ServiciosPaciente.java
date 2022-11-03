@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.eci.pdsw.samples.entities.Paciente;
 import edu.eci.pdsw.samples.entities.TipoIdentificacion;
+import edu.eci.pdsw.samples.persistence.PersistenceException;
 
 /**
  *
@@ -30,6 +31,7 @@ public interface ServiciosPaciente {
      * identificacion, o si se presenta otro problema en las capas inferiores.
      */
     public Paciente consultarPacientesPorId(int id, TipoIdentificacion tipoIdentificacion) throws ExcepcionServiciosSuscripciones;
+    Paciente getPacientesPorId(int id, TipoIdentificacion tipoIdentificacion) throws ExcepcionServiciosSuscripciones, PersistenceException;
     
     /**
      * Consulta los pacientes menores de edad que han tenido enfermedades contagiosas
