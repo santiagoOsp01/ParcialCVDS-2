@@ -21,7 +21,7 @@ luego empezamos a realizar el parcial, toca primero crear los atributos en la ca
 PacientesBean con todos los atributos y funciones basicas que lleguemos a necesitar para el desarollo del 
 parcial
 
-![img_1.png](img/img_11.png)
+![](img/img_11.png)
 
 
 
