@@ -1,17 +1,9 @@
 ## Escuela Colombiana de Ingeniería
 
-### PDSW – Procesos de desarrollo de Software
+### CVDS
 ### Parcial Segundo Tercio
+### Santiago Ospina Mejia
 
-
-**IMPORTANTE**
-
-* Deseable Trabajar en Linux (para evitar problemas con las instrucciones finales).
-* Se puede consultar en la Web: APIs/Documentación de lenguaje y frameworks (Primefaces, Guice, MyBatis, etc), y enunciados de los laboratorios (se pueden revisar los fuentes incluidos con los dichos enunciados).
-* No se permite: Usar memorias USB, acceder a redes sociales, clientes de correo, o sistemas de almacenamiento en la nube (Google Drive, DropBox, etc). El uso de éstos implicará anulación.
-* Clone el proyecto con GIT, NO lo descargue directamente.
-* NO modifique los indicado en consultaPaciente.xhtml.
-* El filtrado y ordenamiento de los datos DEBE realizarse en el motor de base de datos, a través del uso de SQL. Consultar todos los datos y filtrarlos en el servidor de aplicaciones -que es supremamente INEFICIENTE- se evaluará como INCORRECTO.
 
 ## A partir de la aplicación base suministrada, debe realizar lo siguiente:
 
@@ -150,6 +142,8 @@ luego con el servicio de tomcat corrriendo verificamos como quedo la pagina web
 
 para acabar con este laboratorio vemos que tenemos todo en nuestro entorno local
 toca subir todo lo realizado a github, para que este pueda ser evaluado
+
+![](img/img15.png)
 
 
 
