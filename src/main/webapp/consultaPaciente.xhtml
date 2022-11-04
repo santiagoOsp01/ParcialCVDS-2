@@ -17,7 +17,7 @@
             <f:selectItems value="#{mb.tiposIdentificacion}"/>
         </p:selectOneMenu>
         <!--Por favor no cambiar el 'value':-->
-        <p:commandButton action="#{mb.getPacientePorId(input.value)}" update="consultas" value="Consultar"/>
+        <p:commandButton action="#{mb.consultarPacientesPorId(input.value)}" update="consultas" value="Consultar"/>
         <p:dataTable id="consultas" var="Consulta" value="#{mb.getPaciente().getConsultas()}">
             <f:facet name="header">
                 Consultas de #{mb.getPaciente().getNombre()}

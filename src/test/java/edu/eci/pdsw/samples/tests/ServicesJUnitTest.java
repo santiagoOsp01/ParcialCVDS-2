@@ -81,7 +81,7 @@ public class ServicesJUnitTest {
         }
 
         try{
-            Paciente p = ServiciosPacientesFactory.getInstance().getTestingForumServices().getPacientesPorId(9876, TipoIdentificacion.TI);
+            Paciente p = ServiciosPacientesFactory.getInstance().getTestingForumServices().consultarPacientesPorId(9876, TipoIdentificacion.TI);
             Assert.assertEquals(9876,p.getId());
         } catch(Exception e){
             System.out.println(e.getMessage());

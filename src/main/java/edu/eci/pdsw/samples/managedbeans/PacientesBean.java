@@ -69,9 +69,9 @@ public class PacientesBean {
     }
 
 
-    public void getPacientePorId(int id) throws Exception {
+    public void consultarPacientesPorId(int id) throws Exception {
         try {
-            paciente = ServiciosPacientesFactory.getInstance().getForumsServices().getPacientesPorId(id, tipoIdentificacion);
+            paciente = ServiciosPacientesFactory.getInstance().getForumsServices().consultarPacientesPorId(id, tipoIdentificacion);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,6 +83,10 @@ public class PacientesBean {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public List<Paciente> getMenoresContagiosos() {
+        return menoresContagiosos;
     }
 
     

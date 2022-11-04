@@ -39,7 +39,7 @@ public class MyBatisDAOPaciente implements DaoPaciente {
     public Paciente load(int id, TipoIdentificacion tipoIdentificacion) throws PersistenceException {
         try{
             System.out.println(id);
-            return pacienteMapper.getPacientesPorId(id, tipoIdentificacion);
+            return pacienteMapper.consultarPacientesPorId(id, tipoIdentificacion);
         } catch(Exception e){
             throw e;
         }
@@ -69,6 +69,15 @@ public class MyBatisDAOPaciente implements DaoPaciente {
     @Override
     public void addConsulta(int id, TipoIdentificacion tipoId, Consulta c) throws PersistenceException {
 
+    }
+
+    @Override
+    public List<Paciente> loadMenoresContagiosos() throws PersistenceException{
+        try{
+            return pacienteMapper.menoresContagiosos();
+        } catch(Exception e){
+            throw e;
+        }
     }
 
 

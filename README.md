@@ -28,8 +28,10 @@ Mostrar los pacientes menores de edad que en sus consultas se encuentren las enf
    ![](./img/img2.png)
 
 
+
 3. (40%) Implemente la historia de usuario #1, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en consultaPaciente.xhtml.
    ![](./img/img.png)
 4. (40%)Implemente la historia de usuario #2, agregando todo lo que haga falta en la capa de presentación, lógica y de persistencia. La vista debe implementarse en consultarMenoresEnfermedadContagiosa.xhtml.
 
+   ![](./img/img3.png)
 
