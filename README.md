@@ -136,7 +136,7 @@ y configurar la pagina web, asi como su boton de consultar
 
 luego con el servicio de tomcat corrriendo verificamos como quedo la pagina web 
 
-![](./img/img3.png)
+![](/img/img3.png)
 
 ## FIN
 
