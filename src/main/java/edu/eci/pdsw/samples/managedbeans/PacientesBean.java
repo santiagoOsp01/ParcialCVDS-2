@@ -34,6 +34,7 @@ public class PacientesBean {
     TipoIdentificacion tipoIdentificacion;
     int id;
     Paciente paciente;
+    List<Paciente> menoresContagiosos;
 
     public void setId(int id) {
         this.id = id;
@@ -47,9 +48,7 @@ public class PacientesBean {
         return paciente;
     }
 
-    public void setTipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
-        this.tipoIdentificacion = tipoIdentificacion;
-    }
+    public void setTipoIdentificcion(TipoIdentificacion tipoIdentificacion){this.tipoIdentificacion = tipoIdentificacion;}
 
     public TipoIdentificacion getTipoIdentificacion() {
         return tipoIdentificacion;
@@ -65,9 +64,26 @@ public class PacientesBean {
         
     }
 
-
     public TipoIdentificacion[] getTiposIdentificacion() {
         return TipoIdentificacion.values();
     }
+
+
+    public void getPacientePorId(int id) throws Exception {
+        try {
+            paciente = ServiciosPacientesFactory.getInstance().getForumsServices().getPacientesPorId(id, tipoIdentificacion);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultarMenoresConEnfermedadContagiosa() throws Exception{
+        try{
+            menoresContagiosos = ServiciosPacientesFactory.getInstance().getForumsServices().consultarMenoresConEnfermedadContagiosa();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     
 }

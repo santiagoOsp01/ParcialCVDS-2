@@ -34,10 +34,15 @@ public class MyBatisDAOPaciente implements DaoPaciente {
 
     @Inject
     PacienteMapper pacienteMapper;
-    
+
     @Override
     public Paciente load(int id, TipoIdentificacion tipoIdentificacion) throws PersistenceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            System.out.println(id);
+            return pacienteMapper.getPacientesPorId(id, tipoIdentificacion);
+        } catch(Exception e){
+            throw e;
+        }
     }
 
     @Override

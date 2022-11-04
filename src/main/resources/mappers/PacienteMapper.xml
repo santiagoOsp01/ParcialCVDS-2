@@ -50,9 +50,9 @@
         c.fecha_y_hora AS fecha_y_hora,
         c.resumen AS resumen
         FROM
-        PACIENTES as p JOIN CONSULTAS as c ON
-        p.id = c.PACIENTES_id
+            PACIENTES as p JOIN CONSULTAS as c ON
+                p.id = c.PACIENTES_id AND p.Tipo_id = c.PACIENTES_Tipo_id
         WHERE
-        p.id = #{id} AND p.tipo_id = #{idType}
+            p.id = #{id} AND p.tipo_id = #{idType}
     </select>
 </mapper>

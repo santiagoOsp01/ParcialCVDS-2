@@ -62,13 +62,9 @@ public class ServicesJUnitTest {
     private Connection getConnection() throws SQLException{
         return DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=MYSQL", "anonymous", "anonymous");
     }
-    
-    @Test
-    public void pruebaCeroTest() throws SQLException, ExcepcionServiciosSuscripciones {
-        //Insertar datos en la base de datos de pruebas, de acuerdo con la clase
-        //de equivalencia correspondiente
 
-        // ARRANGE
+    @Test
+    public void pruebaCeroTest() throws SQLException, ExcepcionServiciosSuscripciones{
         clearDB();
         Connection conn=getConnection();
         Statement stmt=conn.createStatement();
@@ -79,59 +75,17 @@ public class ServicesJUnitTest {
         conn.commit();
         conn.close();
 
-        Paciente pacienteTester = new Paciente(9876, TipoIdentificacion.TI, "Carmenzo", new Date(805352400000L));
-        List<Consulta> consultasTester = new ArrayList<>();
-        Consulta consultaTest = new Consulta(new Date(978325200000L), "Gracias");
-        consultaTest.setId(1262218);
-        consultasTester.add(consultaTest);
-        pacienteTester.setConsultas(consultasTester);
-
-        // ACT
-
-        //Paciente paciente = ServiciosPacientesFactory.getInstance().getTestingForumServices().getPacientesById(9876, TipoIdentificacion.TI);
-
-        // ASSERT
-        //assertEquals(pacienteTester, paciente);
-        //assert ...
-        //Assert.fail("Pruebas no implementadas aun...");
-
-    }
-
-    @Test
-    public void Given_IdAndIdType_When_SearchById_Then_ShowPatientAndQuery() throws SQLException, ExcepcionServiciosSuscripciones{
-        clearDB();
-        Connection conn=getConnection();
-        Statement stmt=conn.createStatement();
-
-
-        stmt.execute("INSERT INTO `PACIENTES` (`id`, `tipo_id`, `nombre`, `fecha_nacimiento`) VALUES (9876,'TI','Carmenzo','1995-07-10')");
-        stmt.execute("INSERT INTO `CONSULTAS` (`idCONSULTAS`, `fecha_y_hora`, `resumen`, `PACIENTES_id`, `PACIENTES_tipo_id`) VALUES (1262218,'2001-01-01 00:00:00','Gracias',9876,'TI')");
-
-
-        conn.commit();
-        conn.close();
         List<Paciente> pacientes = ServiciosPacientesFactory.getInstance().getTestingForumServices().consultarPacientes();
+        for (Paciente paciente : pacientes){
+            System.out.println(paciente);
+        }
+
         try{
             Paciente p = ServiciosPacientesFactory.getInstance().getTestingForumServices().getPacientesPorId(9876, TipoIdentificacion.TI);
             Assert.assertEquals(9876,p.getId());
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
-
-
     }
-
-    @Test
-    public void Given_Nothing_When_QueryContagiousIllness_Then_ShowPatientsWithHepatitisOrThePox() throws SQLException, ExcepcionServiciosSuscripciones{
-        Connection conn=getConnection();
-        Statement stmt=conn.createStatement();
-
-        stmt.execute("INSERT INTO `PACIENTES` (`id`, `tipo_id`, `nombre`, `fecha_nacimiento`) VALUES (9876,'TI','Carmen','1995-07-10')");
-        stmt.execute("INSERT INTO `CONSULTAS` (`idCONSULTAS`, `fecha_y_hora`, `resumen`, `PACIENTES_id`, `PACIENTES_tipo_id`) VALUES (1262218,'2001-01-01 00:00:00','Gracias',9876,'TI')");
-
-        conn.commit();
-        conn.close();
-    }
-    
 
 }
